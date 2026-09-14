@@ -173,36 +173,63 @@ nav {
 /* ---- HERO ---- */
 .hero {
   background: linear-gradient(180deg, var(--green-pale) 0%, var(--warm-white) 100%);
-  padding: 5rem 2rem;
+  padding: clamp(2rem, 8vh, 5rem) 1.5rem clamp(4rem, 12vh, 5rem);
   text-align: center;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-inner { max-width: 680px; margin: 0 auto; }
+.hero-inner { max-width: 680px; margin: 0 auto; width: 100%; }
 .hero-brand {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--green);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
-.hero-badge { margin-bottom: 1.25rem; }
-.hero-badge svg { width: 56px; height: 56px; }
-.hero h1 { margin-bottom: 1.25rem; }
+.hero-badge { margin-bottom: 1rem; }
+.hero-badge svg { width: 48px; height: 48px; }
+.hero h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+}
 .hero-sub {
   color: var(--text-light);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  max-width: 540px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
-.hero-cta { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.hero-cta {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
 
-@media (max-width: 420px) {
-  .hero-cta { flex-direction: column; align-items: center; }
-  .hero-cta .btn { width: 100%; max-width: 280px; }
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem 5rem;
+    min-height: auto;
+  }
+  .hero-brand { font-size: 0.78rem; margin-bottom: 1rem; }
+  .hero-badge { margin-bottom: 0.75rem; }
+  .hero-badge svg { width: 40px; height: 40px; }
+  .hero h1 { font-size: 1.5rem; line-height: 1.3; }
+  .hero-sub { font-size: 0.88rem; line-height: 1.55; margin-bottom: 1.25rem; }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .hero-cta .btn { width: 100%; max-width: 100%; }
 }
 
 /* ---- PROBLEM ---- */
@@ -327,16 +354,17 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .steps { flex-direction: column; align-items: center; gap: 0; }
-  .step { flex: none; max-width: 320px; }
+  .steps { flex-direction: column; align-items: center; gap: 0; overflow: hidden; }
+  .step { flex: none; max-width: 320px; width: 100%; padding: 0; }
   .step-connector {
     transform: rotate(90deg);
-    width: 48px;
+    width: 40px;
     padding-top: 0;
     justify-content: center;
     margin: 0.25rem 0;
+    flex-shrink: 0;
   }
-  .step-connector svg { width: 48px; }
+  .step-connector svg { width: 40px; }
 }
 
 /* ---- TESTIMONIALS ---- */
