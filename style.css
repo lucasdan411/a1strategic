@@ -305,6 +305,15 @@ nav {
  flex-shrink: 0;
 }
 
+.aisco {
+ margin-top: 1.5rem;
+ border-color: var(--gold);
+ background: linear-gradient(135deg, var(--gold-light) 0%, var(--warm-white) 100%);
+}
+.aisco-badge {
+ border-color: var(--gold);
+}
+
 @media (max-width: 768px) {
  .primary-service { flex-direction: column; padding: 2rem; }
  .primary-list { grid-template-columns: 1fr; }
